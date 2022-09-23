@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/isalan06/oringsolaredge/issues"
   },
-  "homepage": "https://github.com/isalan06/oringsolaredge#readme"
+  "homepage": "https://github.com/isalan06/oringsolaredge#readme",
+  "dependencies": {
+    "node-cron": "^3.0.2"
+  }
 }
