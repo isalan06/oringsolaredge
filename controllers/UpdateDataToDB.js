@@ -2,9 +2,8 @@ var mysql = require('mysql');
 const solardataop = require('../models/SolarDataInfo');
 var DBConfig = require('../config/DBConfig');
 const date = require('date-and-time');
-const { connect } = require('../routes/db');
 
-var config = DBConfig.DBConfig_test;
+var config = DBConfig.DBConfig;
 
 const UpdateDataToDB = {
     UpdateEnvData: () => {
