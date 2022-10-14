@@ -110,7 +110,7 @@ const UpdateDataToDB = {
                                 }
                             });
 
-                            let commandString_pro1 = `CALL pro_set_energy(?,?,?,?,?,?,?,?)`;
+                            let commandString_pro1 = `CALL pro_set_energy2(?,?,?,?,?,?,?,?,?,?)`;
 
                             conn.query(commandString_pro1, 
                                     [regularData[index].csutomer_id,
@@ -120,7 +120,10 @@ const UpdateDataToDB = {
                                     regularData[index].inverter_id,
                                     tiemstampString,
                                     regularData[index].life_energy_10Wh,
-                                    regularData[index].total_energy_10Wh,],
+                                    regularData[index].total_energy_10Wh,
+                                    regularData[index].pv,
+                                    regularData[index].temperature,
+                                    ],
                                     (error, results, fields) => {
                                 if(error){console.log('Update PRO_SET_ENERGY Error');}
                                 else {
