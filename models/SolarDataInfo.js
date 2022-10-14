@@ -48,8 +48,8 @@ const SolarDataOP = {
                     'apparent_power_1_W': 0,
                     'apparent_power_2_W': 0,
                     'apparent_power_3_W': 0,
-                    'py': 0,
-                    'temperature': 0
+                    'py': 1,
+                    'temperature': 1
                 };
                 SolarData1.push(data_template);
             }
