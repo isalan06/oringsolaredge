@@ -48,9 +48,10 @@ const SolarDataOP = {
                     'apparent_power_1_W': 0,
                     'apparent_power_2_W': 0,
                     'apparent_power_3_W': 0,
-                    'py': 1,
-                    'temperature': 1
-                };
+                    'py': 0,
+                    'temperature': 0,
+                    
+                }
                 SolarData1.push(data_template);
             }
             let env_template ={
@@ -82,6 +83,7 @@ const SolarDataOP = {
                 var gw_index = parseInt(idStrings[0])-1;
                 var column_index = parseInt(idStrings[1]);
                 var searchIndex = index * 30 + gw_index;
+                
                 if((data.data[i].value != null) && (data.data[i].timestamp != null)){
                     var record_timestamp = new Date(data.data[i].timestamp).getTime();
                     var intervaltime = currentDateTime - record_timestamp;
@@ -121,7 +123,7 @@ const SolarDataOP = {
                         if(column_index == 349202) { SolarData1[searchIndex].apparent_power_1_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
                         if(column_index == 349203) { SolarData1[searchIndex].apparent_power_2_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
                         if(column_index == 349204) { SolarData1[searchIndex].apparent_power_3_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
-                        if(data.data[i].id == 'GW101_000000') { SolarData1[searchIndex].py = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
+                        
                         if(data.data[i].id == 'GW101_000000') { SolarEnv1[index].py = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW101_000001') { SolarEnv1[index].py_min = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW101_000002') { SolarEnv1[index].py_max = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
@@ -131,6 +133,8 @@ const SolarDataOP = {
                         if(refreshTag) {
                             var columntime = new Date(SolarData1[searchIndex].timestamp).getTime();
                             if(record_timestamp > columntime){SolarData1[searchIndex].timestamp = data.data[i].timestamp;}
+                            if(SolarEnv1[index].py !== 0){SolarData1[searchIndex].py=SolarEnv1[index].py;}
+                            if(SolarEnv1[index].temperature !== 0){SolarData1[searchIndex].temperature=SolarEnv1[index].temperature;}
                         }
                         if(refreshTag2) {
                             var columntime = new Date(SolarEnv1[index].timestamp).getTime();
