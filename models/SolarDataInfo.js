@@ -121,10 +121,10 @@ const SolarDataOP = {
                         if(column_index == 349202) { SolarData1[searchIndex].apparent_power_1_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
                         if(column_index == 349203) { SolarData1[searchIndex].apparent_power_2_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
                         if(column_index == 349204) { SolarData1[searchIndex].apparent_power_3_W = data.data[i].value; SolarData1[searchIndex].refresh = true; refreshTag = true;}
-                        if(data.data[i].id == 'GW101_000000') { SolarData1[searchIndex].py=data.data[i].value; SolarEnv1[index].py = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
+                        if(data.data[i].id == 'GW101_000000') { SolarData1[searchIndex].py = data.data[i].value; SolarEnv1[index].py = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW101_000001') { SolarEnv1[index].py_min = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW101_000002') { SolarEnv1[index].py_max = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
-                        if(data.data[i].id == 'GW102_000000') { SolarData1[searchIndex].temperature=data.data[i].value; SolarEnv1[index].temperature = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
+                        if(data.data[i].id == 'GW102_000000') { SolarData1[searchIndex].temperature = data.data[i].value; SolarEnv1[index].temperature = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW102_000001') { SolarEnv1[index].temperature_min = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(data.data[i].id == 'GW102_000002') { SolarEnv1[index].temperature_max = data.data[i].value; SolarEnv1[index].refresh = true; refreshTag2 = true; }
                         if(refreshTag) {
