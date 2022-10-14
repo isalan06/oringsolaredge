@@ -121,7 +121,7 @@ const UpdateDataToDB = {
                                     tiemstampString,
                                     regularData[index].life_energy_10Wh,
                                     regularData[index].total_energy_10Wh,
-                                    regularData[index].pv,
+                                    regularData[index].py,
                                     regularData[index].temperature,
                                     ],
                                     (error, results, fields) => {
